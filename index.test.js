@@ -17,5 +17,12 @@ describe('index functions', () => {
       0, 1, 2, 3, 4
     ]);
   });
+  it('can filter', () => {
+    const myCallback = number => number % 2;
+    const updatedArray = filter(arr, myCallback);
+    expect(updatedArray).toEqual([
+      2, 4
+    ]);
+  });
 });
 
