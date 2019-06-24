@@ -7,7 +7,7 @@ describe('index functions', () => {
     const myCallback = (number) => number + 1;
     const updatedArray = map(arr, myCallback);
     expect(updatedArray).toEqual([
-      [2, 3, 4, 5, 6]
+      2, 3, 4, 5, 6
     ]);
   });
 });
