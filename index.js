@@ -1,3 +1,6 @@
+// map 
+// takes an array and a thing to do to that array 
+// returns a new updated array 
 function map(arr, callback) {
   // fill in
 }
