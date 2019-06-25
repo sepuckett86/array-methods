@@ -114,6 +114,7 @@ describe('array methods', () => {
     expect(mockCallback).toHaveBeenLastCalledWith(5);
   });
 
+  // Attempt at testing for index, but doesn't work
   // it('index passed in callback is handled', () => {
   //   const mockCallback = jest.fn((number, index) => {
   //     if(index !== 0) expect(mockCallback).toHaveBeenCalledTimes(index + 1);
