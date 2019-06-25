@@ -38,13 +38,31 @@ function findIndex(arr, callback) {
 
 
 // Define an input, callback, and output example
-// input arr: [1, 2, 3, 4]
-// input callback: add everything
-// output arr: 10
 
-function reduce(arr, callback, initialValue = 0) {
-  let accumulator = initialValue;
-  for(let i = 0; i < arr.length; i++) {
+// Input arr: [1, 2, 3, 4]
+// Input callback: add everything
+// Output arr: 10
+
+// Reduce 
+//  -set initial accumulator
+//  -iterates through every item in the array
+//      -performs callback
+// 
+// Callback
+//  -takes result of last action (accumulator)
+//  -performs callback on the accumulator
+//  -returns updated accumulator
+
+function reduce(arr, callback, initialValue) {
+  let accumulator;
+  let i = 0;
+  if(initialValue === undefined) {
+    accumulator = arr[0];
+    i = 1;
+  } else {
+    accumulator = initialValue;
+  }
+  for(i; i < arr.length; i++) {
     if(arr[i]) accumulator = callback(accumulator, arr[i]);
   }
   return accumulator;

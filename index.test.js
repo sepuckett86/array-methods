@@ -65,6 +65,13 @@ describe('array methods', () => {
     expect(actualSum).toEqual(15);
   });
 
+  it('can reduce', () => {
+    const myArr = [4, 1, 2];
+    const callback = (accumulator, value) => accumulator / value;
+    const actualSum = reduce(myArr, callback);
+    expect(actualSum).toEqual(2);
+  });
+
   it('can reduce with initial value', () => {
     const callback = (accumulator, value) => accumulator + value;
     const initial = 10;
@@ -107,12 +114,16 @@ describe('array methods', () => {
     expect(mockCallback).toHaveBeenLastCalledWith(5);
   });
 
-  it('index passed in callback is handled', () => {
-    const callback = (number, index) => {
-      if(index) expect(index).toEqual(expect.any(Number));
-      return number + 1;
-    };
-    map(arr, callback);
-  });
+  // it('index passed in callback is handled', () => {
+  //   const mockCallback = jest.fn((number, index) => {
+  //     if(index !== 0) expect(mockCallback).toHaveBeenCalledTimes(index + 1);
+  //     return number + 1;
+  //   });
+  //   map(arr, mockCallback);
+  //   filter(arr, mockCallback);
+  //   findIndex(arr, mockCallback);
+  //   every(arr, mockCallback);
+  //   forEach(arr, mockCallback);
+  // });
 });
 
