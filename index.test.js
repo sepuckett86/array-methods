@@ -27,6 +27,18 @@ describe('index functions', () => {
     ]);
   });
 
+  it('filter returns an array', () => {
+    const callback = number => number % 2 === 0;
+    const updatedArray = filter(arr, callback);
+    expect(updatedArray).toEqual(expect.any(Array));
+  });
+
+  it('filter returns an empty array if nothing passes condition', () => {
+    const callback = number => number % 7 === 0;
+    const updatedArray = filter(arr, callback);
+    expect(updatedArray).toEqual([]);
+  });
+
   it('can findIndex', () => {
     const callback = number => number > 3;
     const index = findIndex(arr, callback);
@@ -83,6 +95,8 @@ describe('index functions', () => {
 
     // The return value of the first call to the function was 2
     expect(mockCallback.mock.results[1].value).toBe(3);
+
+    expect(mockCallback).toHaveBeenLastCalledWith(5);
   });
 });
 
