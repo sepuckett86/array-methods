@@ -13,15 +13,16 @@ function map(arr, callback) {
 function filter(arr, callback) {
   let updatedArray = [];
   for(let i = 0; i < arr.length; i++) {
-    if(callback(arr[i])) {
-      updatedArray.push(arr[i]);
-    }
+    if(callback(arr[i])) updatedArray.push(arr[i]);
   }
   return updatedArray;
 }
 
 function findIndex(arr, callback) {
-  // fill in
+  for(let i = 0; i < arr.length; i++) {
+    if(callback(arr[i])) return i;
+  }
+  return -1;
 }
 
 function reduce(arr, callback, [initialValue]) {
