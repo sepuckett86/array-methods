@@ -4,7 +4,7 @@
 function map(arr, callback) {
   let updatedArray = [];
   for(let i = 0; i < arr.length; i++) {
-    if(arr[i]) updatedArray[i] = callback(arr[i]);
+    if(arr[i]) updatedArray[i] = callback(arr[i], i);
     else updatedArray[i] = undefined;
   }
   return updatedArray;
@@ -35,6 +35,12 @@ function findIndex(arr, callback) {
   }
   return -1;
 }
+
+
+// Define an input, callback, and output example
+// input arr: [1, 2, 3, 4]
+// input callback: add everything
+// output arr: 10
 
 function reduce(arr, callback, initialValue = 0) {
   let accumulator = initialValue;

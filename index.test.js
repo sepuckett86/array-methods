@@ -4,7 +4,9 @@ const arr = [1, 2, 3, 4, 5, undefined];
 
 describe('array methods', () => {
   it('can map (n + 1)', () => {
-    const callback = number => number + 1;
+    const callback = number => {
+      return number + 1;
+    };
     const updatedArray = map(arr, callback);
     expect(updatedArray).toEqual([
       2, 3, 4, 5, 6, undefined
@@ -103,6 +105,14 @@ describe('array methods', () => {
     expect(mockCallback.mock.results[1].value).toBe(3);
 
     expect(mockCallback).toHaveBeenLastCalledWith(5);
+  });
+
+  it('index passed in callback is handled', () => {
+    const callback = (number, index) => {
+      if(index) expect(index).toEqual(expect.any(Number));
+      return number + 1;
+    };
+    map(arr, callback);
   });
 });
 
