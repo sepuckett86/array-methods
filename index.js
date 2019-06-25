@@ -5,6 +5,7 @@ function map(arr, callback) {
   let updatedArray = [];
   for(let i = 0; i < arr.length; i++) {
     if(arr[i]) updatedArray[i] = callback(arr[i]);
+    else updatedArray[i] = undefined;
   }
   return updatedArray;
 }

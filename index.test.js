@@ -7,7 +7,7 @@ describe('index functions', () => {
     const callback = number => number + 1;
     const updatedArray = map(arr, callback);
     expect(updatedArray).toEqual([
-      2, 3, 4, 5, 6
+      2, 3, 4, 5, 6, undefined
     ]);
   });
 
@@ -15,8 +15,14 @@ describe('index functions', () => {
     const callback = number => number - 1;
     const updatedArray = map(arr, callback);
     expect(updatedArray).toEqual([
-      0, 1, 2, 3, 4
+      0, 1, 2, 3, 4, undefined
     ]);
+  });
+
+  it('map returns an array of identical length', () => {
+    const callback = number => number - 1;
+    const updatedArray = map(arr, callback);
+    expect(updatedArray).toHaveLength(arr.length);
   });
 
   it('can filter', () => {
