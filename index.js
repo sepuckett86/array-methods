@@ -25,8 +25,12 @@ function findIndex(arr, callback) {
   return -1;
 }
 
-function reduce(arr, callback, [initialValue]) {
-  // fill in
+function reduce(arr, callback, initialValue = 0) {
+  let accumulator = initialValue;
+  for(let i = 0; i < arr.length; i++) {
+    accumulator = callback(accumulator, arr[i]);
+  }
+  return accumulator;
 }
 
 function every(arr, callback) {
