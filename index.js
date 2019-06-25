@@ -33,12 +33,18 @@ function reduce(arr, callback, initialValue = 0) {
   return accumulator;
 }
 
+// returns a boolean if every array member satisfies the callback
 function every(arr, callback) {
-  // fill in
+  for(let i = 0; i < arr.length; i++) {
+    if(!callback(arr[i])) return false;
+  }
+  return true;
 }
 
 function forEach(arr, callback) {
-  // fill in
+  for(let i = 0; i < arr.length; i++) {
+    callback(arr[i]);
+  }
 }
 
 module.exports = { 
