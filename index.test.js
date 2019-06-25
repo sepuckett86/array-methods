@@ -2,7 +2,7 @@ const { map, filter, findIndex, reduce, every, forEach } = require('./index.js')
 
 const arr = [1, 2, 3, 4, 5, undefined];
 
-describe('index functions', () => {
+describe('array methods', () => {
   it('can map (n + 1)', () => {
     const callback = number => number + 1;
     const updatedArray = map(arr, callback);

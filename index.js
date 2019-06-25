@@ -21,6 +21,14 @@ function filter(arr, callback) {
   return updatedArray;
 }
 
+// Define an array
+// Define a callback condition that will return a boolean
+// Iterate over the array, 
+// If array item is not undefined or a hole 
+//    Call callback function with item as parameter
+//    If callback is true, return index
+// If callback is never true, return -1
+
 function findIndex(arr, callback) {
   for(let i = 0; i < arr.length; i++) {
     if(callback(arr[i])) return i;
