@@ -10,6 +10,7 @@ describe('index functions', () => {
       2, 3, 4, 5, 6
     ]);
   });
+
   it('can map (n - 1)', () => {
     const callback = number => number - 1;
     const updatedArray = map(arr, callback);
@@ -17,6 +18,7 @@ describe('index functions', () => {
       0, 1, 2, 3, 4
     ]);
   });
+
   it('can filter', () => {
     const callback = number => number % 2;
     const updatedArray = filter(arr, callback);
@@ -24,37 +26,44 @@ describe('index functions', () => {
       2, 4
     ]);
   });
+
   it('can findIndex', () => {
     const callback = number => number > 3;
     const index = findIndex(arr, callback);
     expect(index).toEqual(3);
   });
+
   it('can findIndex of -1', () => {
     const callback = number => number > 100;
     const index = findIndex(arr, callback);
     expect(index).toEqual(-1);
   });
+
   it('can reduce', () => {
     const callback = (accumulator, value) => accumulator + value;
     const actualSum = reduce(arr, callback);
     expect(actualSum).toEqual(15);
   });
+
   it('can reduce with initial value', () => {
     const callback = (accumulator, value) => accumulator + value;
     const initial = 10;
     const actualSum = reduce(arr, callback, initial);
     expect(actualSum).toEqual(25);
   });
+
   it('can return true with every', () => {
     const callback = number => number > 0;
     const boolean = every(arr, callback);
     expect(boolean).toEqual(true);
   });
+
   it('can return false with every', () => {
     const callback = number => number < 0;
     const boolean = every(arr, callback);
     expect(boolean).toEqual(false);
   });
+  
   it('can perform forEach', () => {
     const mockCallback = jest.fn((item) => item + 1);
     forEach(arr, mockCallback);
