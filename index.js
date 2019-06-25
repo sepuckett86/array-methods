@@ -13,7 +13,9 @@ function map(arr, callback) {
 function filter(arr, callback) {
   let updatedArray = [];
   for(let i = 0; i < arr.length; i++) {
-    if(callback(arr[i])) updatedArray.push(arr[i]);
+    if(callback(arr[i])) {
+      updatedArray[updatedArray.length] = arr[i];
+    }
   }
   return updatedArray;
 }
@@ -54,4 +56,4 @@ module.exports = {
   reduce,
   every,
   forEach
-}
+};
