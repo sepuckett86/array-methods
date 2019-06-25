@@ -4,7 +4,7 @@
 function map(arr, callback) {
   let updatedArray = [];
   for(let i = 0; i < arr.length; i++) {
-    updatedArray[i] = callback(arr[i]);
+    if(arr[i]) updatedArray[i] = callback(arr[i]);
   }
   return updatedArray;
 }
@@ -28,7 +28,7 @@ function findIndex(arr, callback) {
 function reduce(arr, callback, initialValue = 0) {
   let accumulator = initialValue;
   for(let i = 0; i < arr.length; i++) {
-    accumulator = callback(accumulator, arr[i]);
+    if(arr[i]) accumulator = callback(accumulator, arr[i]);
   }
   return accumulator;
 }
@@ -36,14 +36,14 @@ function reduce(arr, callback, initialValue = 0) {
 // returns a boolean if every array member satisfies the callback
 function every(arr, callback) {
   for(let i = 0; i < arr.length; i++) {
-    if(!callback(arr[i])) return false;
+    if(arr[i]) if(!callback(arr[i])) return false;
   }
   return true;
 }
 
 function forEach(arr, callback) {
   for(let i = 0; i < arr.length; i++) {
-    callback(arr[i]);
+    if(arr[i]) callback(arr[i]);
   }
 }
 

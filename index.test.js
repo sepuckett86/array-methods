@@ -1,6 +1,6 @@
 const { map, filter, findIndex, reduce, every, forEach } = require('./index.js');
 
-const arr = [1, 2, 3, 4, 5];
+const arr = [1, 2, 3, 4, 5,,];
 
 describe('index functions', () => {
   it('can map (n + 1)', () => {
@@ -68,6 +68,7 @@ describe('index functions', () => {
     const mockCallback = jest.fn((item) => item + 1);
     forEach(arr, mockCallback);
 
+    expect(mockCallback).toHaveBeenCalledTimes(5);
     // The mock function is called twice
     expect(mockCallback.mock.calls.length).toBe(5);
 
