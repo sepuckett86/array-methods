@@ -20,7 +20,7 @@ describe('index functions', () => {
   });
 
   it('can filter', () => {
-    const callback = number => number % 2;
+    const callback = number => number % 2 === 0;
     const updatedArray = filter(arr, callback);
     expect(updatedArray).toEqual([
       2, 4
@@ -63,7 +63,7 @@ describe('index functions', () => {
     const boolean = every(arr, callback);
     expect(boolean).toEqual(false);
   });
-  
+
   it('can perform forEach', () => {
     const mockCallback = jest.fn((item) => item + 1);
     forEach(arr, mockCallback);

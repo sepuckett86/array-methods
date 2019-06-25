@@ -9,8 +9,15 @@ function map(arr, callback) {
   return updatedArray;
 }
 
+// returns an array of items that return true in callback
 function filter(arr, callback) {
-  // fill in
+  let updatedArray = [];
+  for(let i = 0; i < arr.length; i++) {
+    if(callback(arr[i])) {
+      updatedArray.push(arr[i]);
+    }
+  }
+  return updatedArray;
 }
 
 function findIndex(arr, callback) {
